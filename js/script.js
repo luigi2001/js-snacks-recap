@@ -7,7 +7,7 @@ let a = parseInt(prompt('inserisci il primo indice (A):' + numeri.length));
 
 let b = parseInt(prompt('inserisci il secondo indice (B):' + numeri.length));
 
-numeri.forEach((element) =>{
+numeri.forEach((element,index) =>{
     if(a > b || b > element.length){
         alert('Attenzione! indice A deve essere più piccolo di indice B oppure hai inserito un indice B maggiore');
 
@@ -15,11 +15,9 @@ numeri.forEach((element) =>{
     
         b = parseInt(prompt('inserisci il secondo indice (B):' + element.length));
     
+    } else if(index >= a && index <= b){
+        nuovo.push(element);
     }
 });
-
-for(let i = a - 1; i < b; i++){
-    nuovo.push(numeri[i]);
-}
 
 console.log(nuovo);
